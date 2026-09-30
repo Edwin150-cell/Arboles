@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesador de Expresiones y Árboles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Árbol y Conversión de Expresiones</h1>
+        <p class="subtitle">Ingresa una expresión matemática y selecciona su formato de origen</p>
+
+        <div id="errorBox" class="error-message"></div>
+
+        <div class="form-group">
+            <input type="text" id="expressionInput" placeholder="Ej. (A + B) * C" autocomplete="off">
+            <select id="notationSelect">
+                <option value="infix">Infija</option>
+                <option value="postfix">Posfija (RPN)</option>
+                <option value="prefix">Prefija (Polaca)</option>
+            </select>
+            <div class="button-group">
+                <button id="processBtn">Procesar</button>
+                <button id="clearBtn" class="btn-secondary">Limpiar</button>
+            </div>
+        </div>
+
+        <div class="results-grid">
+            <div class="result-card">
+                <h3>Infija</h3>
+                <p id="resInfix">-</p>
+            </div>
+            <div class="result-card">
+                <h3>Prefija</h3>
+                <p id="resPrefix">-</p>
+            </div>
+            <div class="result-card">
+                <h3>Posfija</h3>
+                <p id="resPostfix">-</p>
+            </div>
+        </div>
+
+        <h3 style="font-size: 1.1rem; margin-bottom: 0.75rem; color: #f1f5f9;">Visualización del Árbol de Expresiones</h3>
+        <div class="tree-container" id="treeContainer">
+            <svg id="treeSvg">
+                <g id="zoomGroup">
+                    <g id="edgesGroup"></g>
+                    <g id="nodesGroup"></g>
+                </g>
+            </svg>
+        </div>
+        <p class="instructions"> Tip: Puedes arrastrar el lienzo para mover el árbol y usar la rueda del ratón para hacer zoom.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
